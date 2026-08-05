@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO基本設定 -->
+    <title>ペットが亡くなったときに引くカード | Yourtarot.com</title>
+    <meta name="description" content="大切なペットが旅立ったあなたへ。タロットカード1枚から、今あなたに必要な癒やしや心に寄り添うメッセージを届けます。無料で今すぐ占えます。">
+    <meta name="keywords" content="ペットロス, タロット占い, 1枚引き, メッセージ, 無料占い, Yourtarot.com">
+    <link rel="canonical" href="https://yourtarot.com/pet.html">
+
+    <!-- OGP (SNSシェア用設定) -->
+    <meta property="og:title" content="ペットが亡くなったときに引くカード | Yourtarot.com">
+    <meta property="og:description" content="大切なペットが旅立ったあなたへ。1枚のタロットカードが心に寄り添うメッセージを伝えます。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourtarot.com/pet.html">
+    <meta property="og:site_name" content="Yourtarot.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ペットが亡くなったときに引くカード | Yourtarot.com">
+    <meta name="twitter:description" content="大切なペットの旅立ちを占います。いま、ペットの魂がどこにあるのかを探索してみましょう。">
+
+    <!-- 構造化データ (JSON-LD) によるSEO強化 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ペットが亡くなったときに引くカード - Yourtarot.com",
+      "url": "https://yourtarot.com/pet.html",
+      "description": "大切なペットとの別れに寄り添う1枚引きのタロット占いWebアプリケーション。",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #2a1b40 50%, #3b154c 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: #2c3e50;
+            box-sizing: border-box;
+        }
+
+        /* アプリケーションコンテナ */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            min-height: calc(100vh - 40px);
+            background-color: #ffffff;
+            box-sizing: border-box;
+            padding: 0 28px 0 28px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 100px rgba(230, 0, 103, 0.15);
+            overflow: hidden;
+        }
+
+        .site-header {
+            padding: 24px 0 16px 0;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .site-title {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Arial Black', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a102f;
+            letter-spacing: 0.05em;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .page-title {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            letter-spacing: 0.02em;
+        }
+
+        .page-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            background: linear-gradient(135deg, #e60067 0%, #ff6b8b 100%);
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(230, 0, 103, 0.35);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(230, 0, 103, 0.45);
+        }
+
+        .action-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 12px rgba(230, 0, 103, 0.3);
+        }
+
+        .action-button:disabled {
+            background: #cbd5e1;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* 結果表示エリア */
+        .result-container {
+            display: none;
+            margin-top: 36px;
+            padding: 24px 20px;
+            border-radius: 20px;
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-display-1 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        /* 画像枠 */
+        .image-box-single {
+            width: 160px;
+            aspect-ratio: 2 / 3;
+            background-color: #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* 【変更箇所】初期ぼかしをマイルド（2px）に変更 */
+        .image-box-single img {
+            width: 100%;
+            height: 100%;
+            filter: blur(2px); /* ほんのり優しいぼかし */
+            transition: filter 0.3s ease;
+        }
+
+        /* ホバー（またはタップ）時はクリアに表示 */
+        .image-box-single:hover img {
+            filter: blur(0px);
+        }
+
+        .result-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+            border-left: 3px solid #e60067;
+            padding-left: 12px;
+        }
+
+        .result-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+
+        /* ナビゲーションメニュー */
+        .menu-section {
+            margin-top: 40px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 28px;
+        }
+
+        .menu-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #64748b;
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #334155;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .menu-item:active {
+            transform: scale(0.98);
+        }
+
+        /* フッタースタイル */
+        .site-footer {
+            margin-top: 40px;
+            padding: 24px 0;
+            border-top: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
+        .about-section {
+            margin-bottom: 20px;
+            text-align: left;
+            background-color: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 12px;
+        }
+
+        .about-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #475569;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .about-text {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+
+        /* スマホ用レスポンシブ微調整 */
+        @media (max-width: 480px) {
+            body {
+                padding: 0;
+            }
+            .container {
+                border-radius: 0;
+                min-height: 100vh;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ヘッダーエリア -->
+        <header class="site-header">
+            <div class="site-title">Yourtarot.com</div>
+        </header>
+
+        <div class="main-content">
+            <h1 class="page-title">ペットが亡くなったときに引くカード</h1>
+
+            <p class="page-description">
+                あの子のことを想いながらボタンを押してください。<br>いま、魂がどこにあるのかを探索してみましょう。
+            </p>
+
+            <!-- ボタンを押すとページをリロードしてカードを引く -->
+            <button class="action-button" id="draw-button">カードを引く</button>
+
+            <div class="result-container" id="result-area">
+                <div class="card-display-1">
+                    <div class="image-box-single"><img id="card-img-0" src="" alt="カード画像"></div>
+                </div>
+
+                <div class="result-title" id="result-title">あなたに届いたカード</div>
+                <div class="result-text" id="result-text"></div>
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-title">関連メニュー</div>
+                <div class="menu-grid">
+                    <a href="menu1.html" class="menu-item">準備中</a>
+                    <a href="menu2.html" class="menu-item">準備中</a>
+                    <a href="menu3.html" class="menu-item">準備中</a>
+                    <a href="menu4.html" class="menu-item">準備中</a>
+                    <a href="menu5.html" class="menu-item">準備中</a>
+                    <a href="menu6.html" class="menu-item">準備中</a>
+                    <a href="menu7.html" class="menu-item">準備中</a>
+                    <a href="menu8.html" class="menu-item">準備中</a>
+                    <a href="menu9.html" class="menu-item">準備中</a>
+                    <a href="menu10.html" class="menu-item">準備中</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- フッターエリア -->
+        <footer class="site-footer">
+            <div class="about-section">
+                <h2 class="about-title">このサイトについて</h2>
+                <p class="about-text">
+                    東京都在住の占い師が練習用に作成しているサイトです。あなたの情報はサイトに読み込まれません。日常のよしなしごとやちょっとした不安の解消にお役立てください。
+                </p>
+            </div>
+            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Yourtarot.com All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // =========================================================
+        // microCMSの設定情報
+        // =========================================================
+        const MICROCMS_SERVICE_DOMAIN = 'uge4f6f5lj';
+        const MICROCMS_API_KEY = 'Kf8tbnHNXlz52fKZ2Z0mRPF4OnIAwPi0fXbc';
+        const ENDPOINT = 'pet';
+
+        const drawButton = document.getElementById('draw-button');
+        const resultArea = document.getElementById('result-area');
+        const resultTitle = document.getElementById('result-title');
+        const resultText = document.getElementById('result-text');
+        const cardImg = document.getElementById('card-img-0');
+
+        // ボタンが押されたらリロード（パラメータ付与）する処理
+        drawButton.addEventListener('click', function() {
+            const currentUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.location.href = currentUrl + '?draw=true&t=' + new Date().getTime();
+        });
+
+        // ページ読み込み完了時の判定処理
+        window.addEventListener('DOMContentLoaded', async function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (!urlParams.has('draw')) {
+                return;
+            }
+
+            drawButton.textContent = 'もう一度占う';
+
+            try {
+                const url = `https://${MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1/${ENDPOINT}?limit=80`;
+
+                const response = await fetch(url, {
+                    headers: {
+                        'X-MICROCMS-API-KEY': MICROCMS_API_KEY
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`APIエラー: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const allCards = data.contents;
+
+                if (!allCards || allCards.length === 0) {
+                    alert('microCMSにカードデータが登録されていません。');
+                    return;
+                }
+
+                // 正位置（末尾がN）のカードのみフィルタリング
+                const normalCards = allCards.filter(card => card.code && card.code.endsWith('N'));
+
+                if (normalCards.length === 0) {
+                    alert('正位置のカードデータが見つかりませんでした。');
+                    return;
+                }
+
+                // 正位置カードの中からランダムで1枚選出
+                const randomIndex = Math.floor(Math.random() * normalCards.length);
+                const selectedCard = normalCards[randomIndex];
+
+                // 画面への反映
+                const cardName = selectedCard.title || selectedCard.name || selectedCard.code || 'タロットカード';
+                
+                if (selectedCard.image && selectedCard.image.url) {
+                    cardImg.src = selectedCard.image.url;
+                    cardImg.alt = cardName;
+                } else {
+                    cardImg.src = '';
+                    cardImg.alt = '画像なし';
+                }
+
+                // 【変更箇所】墨かっこ【】を消去してすっきり配置
+                resultTitle.textContent = cardName;
+                
+                // 固定メッセージ
+                const defaultMessage = '生けるものはすべて、いつか生を卒業し、また生を受け魂を磨いていきます。あの子は、あなたの元できっと幸せでした。今は、一つのステージを終えることを祝福してあげましょう。';
+
+                // microCMSの「name」または「description」等からカード固有の文章を取得
+                const descriptionText = selectedCard.name || selectedCard.description || selectedCard.text || selectedCard.content || '';
+                
+                // カード固有の文章がある場合は「固定メッセージ」の前に添えて表示
+                if (descriptionText && descriptionText !== cardName) {
+                    resultText.textContent = `${descriptionText}\n\n${defaultMessage}`;
+                } else {
+                    resultText.textContent = defaultMessage;
+                }
+
+                resultArea.style.display = 'block';
+                resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            } catch (error) {
+                console.error('エラー詳細:', error);
+                alert(`通信または処理中にエラーが発生しました:\n${error.message}`);
+            }
+        });
+
+        resultArea.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
