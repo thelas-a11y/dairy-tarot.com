@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO基本設定 -->
+    <title>タロットYes/No 3枚引き | Yourtarot.com</title>
+    <meta name="description" content="無料のタロットYes/No 3枚引き占い。あなたの知りたいことや悩みの結論（YES/NO）を3枚のタロットカードが導き出します。今すぐ無料で占ってみましょう。">
+    <meta name="keywords" content="タロット占い, YesNo占い, 3枚引き, タロット, 無料占い, Yourtarot.com">
+    <link rel="canonical" href="https://yourtarot.com/">
+
+    <!-- OGP (SNSシェア用設定) -->
+    <meta property="og:title" content="タロットYes/No 3枚引き | Yourtarot.com">
+    <meta property="og:description" content="心の中で質問を思い浮かべてカードをめくるだけ。3枚のタロットカードからあなたの悩みにYES/NOで答えます。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourtarot.com/">
+    <meta property="og:site_name" content="Yourtarot.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="タロットYes/No 3枚引き | Yourtarot.com">
+    <meta name="twitter:description" content="心の中で質問を思い浮かべてカードをめくるだけ。3枚のタロットカードからあなたの悩みにYES/NOで答えます。">
+
+    <!-- 構造化データ (JSON-LD) によるSEO強化 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "タロットYes/No 3枚引き - Yourtarot.com",
+      "url": "https://yourtarot.com/",
+      "description": "3枚のタロットカードを使ってYES/NOの判定とメッセージを導き出す無料占いWebアプリケーション。",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+
+    <style>
+
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #2a1b40 50%, #3b154c 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: #2c3e50;
+            box-sizing: border-box;
+        }
+
+        /* アプリケーションコンテナ */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            min-height: calc(100vh - 40px);
+            background-color: #ffffff;
+            box-sizing: border-box;
+            padding: 0 28px 0 28px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 100px rgba(230, 0, 103, 0.15);
+            overflow: hidden;
+        }
+
+        /* ヘッダースタイル（ゴシック太字に変更） */
+        .site-header {
+            padding: 24px 0 16px 0;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .site-title {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Arial Black', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a102f;
+            letter-spacing: 0.05em;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .page-title {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            letter-spacing: 0.02em;
+        }
+
+        .page-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            background: linear-gradient(135deg, #e60067 0%, #ff6b8b 100%);
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(230, 0, 103, 0.35);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(230, 0, 103, 0.45);
+        }
+
+        .action-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 12px rgba(230, 0, 103, 0.3);
+        }
+
+        .action-button:disabled {
+            background: #cbd5e1;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .result-container {
+            display: none;
+            margin-top: 36px;
+            padding: 24px 20px;
+            border-radius: 20px;
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .yesno-badge {
+            text-align: center;
+            font-family: 'Hiragino Sans', 'Arial Black', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            padding: 12px;
+            border-radius: 12px;
+            letter-spacing: 2px;
+        }
+        .yesno-badge.yes {
+            color: #d91b5c;
+            background-color: #fdf2f8;
+            border: 1px solid #fbcfe8;
+            box-shadow: 0 4px 12px rgba(217, 27, 92, 0.08);
+        }
+        .yesno-badge.no {
+            color: #3b82f6;
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+        }
+
+        .card-display-3 {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .image-box {
+            flex: 1;
+            aspect-ratio: 2 / 3;
+            background-color: #e2e8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .result-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+            border-left: 3px solid #e60067;
+            padding-left: 12px;
+        }
+
+        .result-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+
+        .menu-section {
+            margin-top: 40px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 28px;
+        }
+
+        .menu-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #64748b;
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #334155;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .menu-item:active {
+            transform: scale(0.98);
+        }
+
+        .site-footer {
+            margin-top: 40px;
+            padding: 24px 0;
+            border-top: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
+        .about-section {
+            margin-bottom: 20px;
+            text-align: left;
+            background-color: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 12px;
+        }
+
+        .about-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #475569;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .about-text {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0;
+            }
+            .container {
+                border-radius: 0;
+                min-height: 100vh;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ヘッダーエリア -->
+        <header class="site-header">
+            <div class="site-title">Yourtarot.com</div>
+        </header>
+
+        <div class="main-content">
+            <h1 class="page-title">タロットYes/No 3枚引き占い</h1>
+
+            <p class="page-description">
+                心の中で質問を強く思い浮かべてからボタンを押してください。<br>3枚のカードがあなたの答えを紐解きます。
+            </p>
+
+            <!-- ボタンを押すとページをリロードしてカードを引く -->
+            <button class="action-button" id="draw-button">カードを引く</button>
+
+            <div class="result-container" id="result-area">
+                <div id="yesno-badge" class="yesno-badge"></div>
+
+                <div class="card-display-3">
+                    <div class="image-box"><img id="card-img-0" src="" alt="1枚目"></div>
+                    <div class="image-box"><img id="card-img-1" src="" alt="2枚目"></div>
+                    <div class="image-box"><img id="card-img-2" src="" alt="3枚目"></div>
+                </div>
+
+                <div class="result-title" id="result-title">引き当てたカード</div>
+                <div class="result-text" id="result-text"></div>
+
+                <p class="page-description" style="margin-bottom: 0;">
+                    「NO」の場合、各カードの意味に目を向けてみてください。不利な要素をつぶすことで「YES」を引き寄せられます。</br>また、「YES」であることがあなたにとって幸せかどうかを確かめてください。
+                </p>
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-title">関連メニュー</div>
+                <div class="menu-grid">
+                    <a href="menu1.html" class="menu-item">準備中</a>
+                    <a href="menu2.html" class="menu-item">準備中</a>
+                    <a href="menu3.html" class="menu-item">準備中</a>
+                    <a href="menu4.html" class="menu-item">準備中</a>
+                    <a href="menu5.html" class="menu-item">準備中</a>
+                    <a href="menu6.html" class="menu-item">準備中</a>
+                    <a href="menu7.html" class="menu-item">準備中</a>
+                    <a href="menu8.html" class="menu-item">準備中</a>
+                    <a href="menu9.html" class="menu-item">準備中</a>
+                    <a href="menu10.html" class="menu-item">準備中</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- フッターエリア -->
+        <footer class="site-footer">
+            <div class="about-section">
+                <h2 class="about-title">このサイトについて</h2>
+                <p class="about-text">
+                    東京都在住の占い師が練習用に作成しているサイトです。あなたの情報はサイトに読み込まれません。日常のよしなしごとやちょっとした不安の解消にお役立てください。
+                </p>
+            </div>
+            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Yourtarot.com All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // =========================================================
+        // microCMSの設定情報
+        // =========================================================
+        const MICROCMS_SERVICE_DOMAIN = 'uge4f6f5lj';
+        const MICROCMS_API_KEY = 'Kf8tbnHNXlz52fKZ2Z0mRPF4OnIAwPi0fXbc';
+        const ENDPOINT = 'yesno';
+
+        const drawButton = document.getElementById('draw-button');
+        const resultArea = document.getElementById('result-area');
+        const yesnoBadge = document.getElementById('yesno-badge');
+        const resultTitle = document.getElementById('result-title');
+        const resultText = document.getElementById('result-text');
+        
+        const cardImgs = [
+            document.getElementById('card-img-0'),
+            document.getElementById('card-img-1'),
+            document.getElementById('card-img-2')
+        ];
+
+        // ボタンが押されたらリロード（パラメータ付与）する処理
+        drawButton.addEventListener('click', function() {
+            const currentUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.location.href = currentUrl + '?draw=true&t=' + new Date().getTime();
+        });
+
+        // ページ読み込み完了時の判定処理
+        window.addEventListener('DOMContentLoaded', async function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (!urlParams.has('draw')) {
+                return;
+            }
+
+            drawButton.textContent = 'もう一度占う';
+
+            try {
+                const url = `https://${MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1/${ENDPOINT}?limit=44`;
+
+                const response = await fetch(url, {
+                    headers: {
+                        'X-MICROCMS-API-KEY': MICROCMS_API_KEY
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`APIエラー: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const allCards = data.contents;
+
+                if (!allCards || allCards.length === 0) {
+                    alert('microCMSにカードデータが登録されていません。');
+                    return;
+                }
+
+                const selectedCards = [];
+                const usedCardNumbers = new Set();
+                const pool = [...allCards];
+
+                while (selectedCards.length < 3 && pool.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * pool.length);
+                    const card = pool[randomIndex];
+
+                    const code = card.code || '';
+                    const cardNumber = code.substring(0, 2);
+
+                    if (!usedCardNumbers.has(cardNumber)) {
+                        usedCardNumbers.add(cardNumber);
+                        selectedCards.push(card);
+                    }
+
+                    pool.splice(randomIndex, 1);
+                }
+
+                let normalCount = 0;
+                selectedCards.forEach(card => {
+                    if (card.code && card.code.endsWith('N')) {
+                        normalCount++;
+                    }
+                });
+
+                const isYes = normalCount >= 2;
+
+                yesnoBadge.textContent = isYes ? 'RESULT: YES' : 'RESULT: NO';
+                yesnoBadge.className = `yesno-badge ${isYes ? 'yes' : 'no'}`;
+
+                selectedCards.forEach((card, index) => {
+                    if (card.image && card.image.url) {
+                        cardImgs[index].src = card.image.url;
+                        cardImgs[index].alt = card.title || card.code || `タロットカード ${index+1}枚目`;
+                    } else {
+                        cardImgs[index].src = '';
+                        cardImgs[index].alt = card.code || '画像なし';
+                    }
+                });
+
+                resultTitle.textContent = `正位置 ${normalCount}枚 / 逆位置 ${selectedCards.length - normalCount}枚`;
+                
+                const cardDetailsText = selectedCards.map((card, idx) => {
+                    const posText = (card.code && card.code.endsWith('N')) ? '正位置' : '逆位置';
+                    const name = card.title || card.name || card.code || `カード${idx+1}`;
+                    return `【${idx + 1}枚目・${posText}】${name}`;
+                }).join('\n');
+
+                resultText.textContent = cardDetailsText;
+
+                resultArea.style.display = 'block';
+                resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            } catch (error) {
+                console.error('エラー詳細:', error);
+                alert(`通信または処理中にエラーが発生しました:\n${error.message}`);
+            }
+        });
+
+        resultArea.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
