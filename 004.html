@@ -1,52 +1,41 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M36YCLHHLE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-M36YCLHHLE');
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO基本設定 -->
-    <title>無料タロットYes/No イエスノー占い | dairy-tarot.com</title>
-    <meta name="description" content="無料のタロットYes/No あなたの知りたいことや悩みの結論（YES/NO）を3枚のタロットカードが導き出します。今すぐ無料で占ってみましょう。">
-    <meta name="keywords" content="タロット占い, YesNo占い, 3枚引き, タロット, 無料占い, dairy-tarot.com">
-    <link rel="canonical" href="https://dairy-tarot.com/">
+    <title>無料タロット　今の運勢 | dairy-tarot.com</title>
+    <meta name="description" content="タロットカード1枚で今のあなたの運勢を占います。現在の状態や運気、これから意識したいアドバイスをチェックしましょう。">
+    <meta name="keywords" content="今の運勢, タロット占い, 運勢, 今の状況, 1枚引き, 無料占い, dairy-tarot.com">
+    <link rel="canonical" href="https://dairy-tarot.com/fortune.html">
 
     <!-- OGP (SNSシェア用設定) -->
-    <meta property="og:title" content="無料タロットYes/No イエスノー占い | dairy-tarot.com">
-    <meta property="og:description" content="心の中で質問を思い浮かべてカードをめくるだけ。3枚のタロットカードからあなたの悩みにYES/NOで答えます。">
+    <meta property="og:title" content="あなたを取り巻く運勢 | dairy-tarot.com">
+    <meta property="og:description" content="今のあなたの運勢は？1枚のタロットカードが現在の運気とアドバイスを教えます。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dairy-tarot.com/">
+    <meta property="og:url" content="https://dairy-tarot.com/fortune.html">
     <meta property="og:site_name" content="dairy-tarot.com">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="無料タロットYes/No イエスノー占い | dairy-tarot.com">
-    <meta name="twitter:description" content="心の中で質問を思い浮かべてカードをめくるだけ。3枚のタロットカードからあなたの悩みにYES/NOで答えます。">
+    <meta name="twitter:title" content="あなたを取り巻く運勢 | dairy-tarot.com">
+    <meta name="twitter:description" content="今のあなたの運勢は？1枚のタロットカードが現在の運気とアドバイスを教えます。">
 
     <!-- 構造化データ (JSON-LD) によるSEO強化 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "無料タロットYes/No イエスノー占い - dairy-tarot.com",
-      "url": "https://dairy-tarot.com/",
-      "description": "3枚のタロットカードを使ってYES/NOの判定とメッセージを導き出す無料占いWebアプリケーション。",
+      "name": "あなたを取り巻く運勢 - dairy-tarot.com",
+      "url": "https://dairy-tarot.com/fortune.html",
+      "description": "現在の運勢やカードからのアドバイスを導き出す1枚引きのタロット占いWebアプリケーション。",
       "applicationCategory": "EntertainmentApplication",
       "operatingSystem": "All"
     }
     </script>
 
     <style>
-
         body {
             font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #2a1b40 50%, #3b154c 100%);
@@ -76,7 +65,6 @@
             overflow: hidden;
         }
 
-        /* ヘッダースタイル（ゴシック太字に変更） */
         .site-header {
             padding: 24px 0 16px 0;
             border-bottom: 1px solid #f1f5f9;
@@ -151,6 +139,7 @@
             box-shadow: none;
         }
 
+        /* 結果表示エリア */
         .result-container {
             display: none;
             margin-top: 36px;
@@ -171,55 +160,37 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .yesno-badge {
-            text-align: center;
-            font-family: 'Hiragino Sans', 'Arial Black', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 24px;
-            padding: 12px;
-            border-radius: 12px;
-            letter-spacing: 2px;
-        }
-        .yesno-badge.yes {
-            color: #d91b5c;
-            background-color: #fdf2f8;
-            border: 1px solid #fbcfe8;
-            box-shadow: 0 4px 12px rgba(217, 27, 92, 0.08);
-        }
-        .yesno-badge.no {
-            color: #3b82f6;
-            background-color: #eff6ff;
-            border: 1px solid #bfdbfe;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
-        }
-
-        .card-display-3 {
+        .card-display-1 {
             display: flex;
-            justify-content: space-between;
-            gap: 10px;
+            justify-content: center;
             margin-bottom: 24px;
         }
 
-        .image-box {
-            flex: 1;
-            aspect-ratio: 2 / 3;
+        /* 画像枠 */
+        .image-box-single {
+            width: 180px;
             background-color: #e2e8f0;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             border: 1px solid #f1f5f9;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
-        .image-box img {
+        .image-box-single img {
             width: 100%;
-            height: 100%;
- 
+            height: auto;
+            display: block;
+        }
+
+        .card-name {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 16px;
         }
 
         .result-title {
@@ -232,13 +203,14 @@
         }
 
         .result-text {
-            font-size: 0.9rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.8;
             color: #334155;
             margin-bottom: 20px;
             white-space: pre-wrap;
         }
 
+        /* ナビゲーションメニュー */
         .menu-section {
             margin-top: 40px;
             border-top: 1px solid #f1f5f9;
@@ -285,6 +257,7 @@
             transform: scale(0.98);
         }
 
+        /* フッタースタイル */
         .site-footer {
             margin-top: 40px;
             padding: 24px 0;
@@ -322,6 +295,7 @@
             letter-spacing: 0.05em;
         }
 
+        /* スマホ用レスポンシブ微調整 */
         @media (max-width: 480px) {
             body {
                 padding: 0;
@@ -343,40 +317,33 @@
         </header>
 
         <div class="main-content">
-            <h1 class="page-title">無料タロットYes/No イエスノー占い</h1>
+            <h1 class="page-title">あなたを取り巻く運勢</h1>
 
             <p class="page-description">
-                心の中で質問を強く思い浮かべてからボタンを押してください。<br>3枚のカードがあなたの答えを紐解きます。
+                心を落ち着かせてボタンを押してください。<br>カードが今のあなたの運勢を映し出します。
             </p>
 
             <!-- ボタンを押すとページをリロードしてカードを引く -->
             <button class="action-button" id="draw-button">カードを引く</button>
 
             <div class="result-container" id="result-area">
-                <div id="yesno-badge" class="yesno-badge"></div>
-
-                <div class="card-display-3">
-                    <div class="image-box"><img id="card-img-0" src="" alt="1枚目"></div>
-                    <div class="image-box"><img id="card-img-1" src="" alt="2枚目"></div>
-                    <div class="image-box"><img id="card-img-2" src="" alt="3枚目"></div>
+                <div class="card-display-1">
+                    <div class="image-box-single"><img id="card-img-0" src="" alt="カード画像"></div>
                 </div>
+                <div class="card-name" id="card-name"></div>
 
-                <div class="result-title" id="result-title">引き当てたカード</div>
+                <div class="result-title" id="result-title">今の運勢</div>
                 <div class="result-text" id="result-text"></div>
-
-                <p class="page-description" style="margin-bottom: 0;">
-                    「NO」の場合、各カードの意味に目を向けてみてください。不利な要素をつぶすことで「YES」を引き寄せられます。</br>また、「YES」であることがあなたにとって幸せかどうかを確かめてください。
-                </p>
             </div>
 
             <div class="menu-section">
-                <div class="menu-title">関連メニュー</div>
+                <div class="menu-title">その他無料占い</div>
                 <div class="menu-grid">
-                    <a href="menu1.html" class="menu-item">準備中</a>
-                    <a href="menu2.html" class="menu-item">準備中</a>
-                    <a href="menu3.html" class="menu-item">準備中</a>
-                    <a href="menu4.html" class="menu-item">準備中</a>
-                    <a href="menu5.html" class="menu-item">準備中</a>
+                    <a href="index.html" class="menu-item">YES/NOイエスノー占い（準備中）</a>
+                    <a href="002.html" class="menu-item">ペットを亡くした方へ<br>（準備中））</a>
+                    <a href="003.html" class="menu-item">試験勉強。合格に近づいてる？（準備中）</a>
+                    <a href="004.html" class="menu-item">今の運勢の流れ<br>（準備中）</a>
+                    <a href="005.html" class="menu-item">10年後のあなた<br>（準備中）</a>
                     <a href="menu6.html" class="menu-item">準備中</a>
                     <a href="menu7.html" class="menu-item">準備中</a>
                     <a href="menu8.html" class="menu-item">準備中</a>
@@ -404,19 +371,14 @@
         // =========================================================
         const MICROCMS_SERVICE_DOMAIN = 'uge4f6f5lj';
         const MICROCMS_API_KEY = 'Kf8tbnHNXlz52fKZ2Z0mRPF4OnIAwPi0fXbc';
-        const ENDPOINT = 'yesno';
+        const ENDPOINT = 'now'; 
 
         const drawButton = document.getElementById('draw-button');
         const resultArea = document.getElementById('result-area');
-        const yesnoBadge = document.getElementById('yesno-badge');
         const resultTitle = document.getElementById('result-title');
         const resultText = document.getElementById('result-text');
-        
-        const cardImgs = [
-            document.getElementById('card-img-0'),
-            document.getElementById('card-img-1'),
-            document.getElementById('card-img-2')
-        ];
+        const cardImg = document.getElementById('card-img-0');
+        const cardNameEl = document.getElementById('card-name');
 
         // ボタンが押されたらリロード（パラメータ付与）する処理
         drawButton.addEventListener('click', function() {
@@ -434,7 +396,8 @@
             drawButton.textContent = 'もう一度占う';
 
             try {
-                const url = `https://${MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1/${ENDPOINT}?limit=44`;
+                // 44パターン全て取得できるように limit=100 を設定
+                const url = `https://${MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1/${ENDPOINT}?limit=100`;
 
                 const response = await fetch(url, {
                     headers: {
@@ -454,56 +417,38 @@
                     return;
                 }
 
-                const selectedCards = [];
-                const usedCardNumbers = new Set();
-                const pool = [...allCards];
+                // 全44パターンのデータからランダムで1枚選出
+                const randomIndex = Math.floor(Math.random() * allCards.length);
+                const selectedCard = allCards[randomIndex];
 
-                while (selectedCards.length < 3 && pool.length > 0) {
-                    const randomIndex = Math.floor(Math.random() * pool.length);
-                    const card = pool[randomIndex];
-
-                    const code = card.code || '';
-                    const cardNumber = code.substring(0, 2);
-
-                    if (!usedCardNumbers.has(cardNumber)) {
-                        usedCardNumbers.add(cardNumber);
-                        selectedCards.push(card);
-                    }
-
-                    pool.splice(randomIndex, 1);
+                // 画像の反映 (APIフィールド: img)
+                if (selectedCard.img && selectedCard.img.url) {
+                    cardImg.src = selectedCard.img.url;
+                    cardImg.alt = selectedCard.name || 'タロットカード';
+                } else if (typeof selectedCard.img === 'string') {
+                    cardImg.src = selectedCard.img;
+                    cardImg.alt = selectedCard.name || 'タロットカード';
+                } else {
+                    cardImg.src = '';
+                    cardImg.alt = '画像なし';
                 }
 
-                let normalCount = 0;
-                selectedCards.forEach(card => {
-                    if (card.code && card.code.endsWith('N')) {
-                        normalCount++;
-                    }
-                });
+                // カード名称の反映 (APIフィールド: name)
+                if (selectedCard.name) {
+                    cardNameEl.textContent = selectedCard.name;
+                    cardNameEl.style.display = 'block';
+                } else {
+                    cardNameEl.style.display = 'none';
+                }
 
-                const isYes = normalCount >= 2;
-
-                yesnoBadge.textContent = isYes ? 'RESULT: YES' : 'RESULT: NO';
-                yesnoBadge.className = `yesno-badge ${isYes ? 'yes' : 'no'}`;
-
-                selectedCards.forEach((card, index) => {
-                    if (card.image && card.image.url) {
-                        cardImgs[index].src = card.image.url;
-                        cardImgs[index].alt = card.title || card.code || `タロットカード ${index+1}枚目`;
-                    } else {
-                        cardImgs[index].src = '';
-                        cardImgs[index].alt = card.code || '画像なし';
-                    }
-                });
-
-                resultTitle.textContent = `正位置 ${normalCount}枚 / 逆位置 ${selectedCards.length - normalCount}枚`;
+                // 見出し設定
+                resultTitle.textContent = '今の運勢';
                 
-                const cardDetailsText = selectedCards.map((card, idx) => {
-                    const posText = (card.code && card.code.endsWith('N')) ? '正位置' : '逆位置';
-                    const name = card.title || card.name || card.code || `カード${idx+1}`;
-                    return `【${idx + 1}枚目・${posText}】${name}`;
-                }).join('\n');
-
-                resultText.textContent = cardDetailsText;
+                // 本文テキストの反映 (APIフィールド: text)
+                const mainContentText = selectedCard.text || 'カードからのメッセージを取得できませんでした。';
+                
+                // <br> タグを正しく改行として表示するために innerHTML でセット
+                resultText.innerHTML = mainContentText;
 
                 resultArea.style.display = 'block';
                 resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
