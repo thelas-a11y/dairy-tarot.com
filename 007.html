@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M36YCLHHLE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M36YCLHHLE');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO基本設定 -->
+    <title>次に起こる出来事 | dairy-tarot.com</title>
+    <meta name="description" content="完全無料、タロットカードで占う次の出来事。運命が変わる分岐点がつまびらかとなります">
+    <meta name="keywords" content="今の運勢, 次に起こる出来事,人生,タロット占い, 運勢, 未来, 1枚引き, 無料占い, dairy-tarot.com">
+    <link rel="canonical" href="https://dairy-tarot.com/fortune.html">
+
+    <!-- OGP (SNSシェア用設定) -->
+    <meta property="og:title" content="次に起こる出来事 | dairy-tarot.com">
+    <meta property="og:description" content="タロットカードで占う次の出来事。運命が変わる分岐点がつまびらかとなります">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dairy-tarot.com/fortune.html">
+    <meta property="og:site_name" content="dairy-tarot.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="次に起こる出来事 | dairy-tarot.com">
+    <meta name="twitter:description" content="今タロットカードで占う次の出来事。運命が変わる分岐点がつまびらかとなります">
+
+    <!-- 構造化データ (JSON-LD) によるSEO強化 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "次に起こる出来事 - dairy-tarot.com",
+      "url": "https://dairy-tarot.com/fortune.html",
+      "description": "現在の運勢やカードからのアドバイスを導き出す1枚引きのタロット占いWebアプリケーション。",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "All"
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #2a1b40 50%, #3b154c 100%);
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: #2c3e50;
+            box-sizing: border-box;
+        }
+
+        /* アプリケーションコンテナ */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            min-height: calc(100vh - 40px);
+            background-color: #ffffff;
+            box-sizing: border-box;
+            padding: 0 28px 0 28px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 100px rgba(230, 0, 103, 0.15);
+            overflow: hidden;
+        }
+
+        .site-header {
+            padding: 24px 0 16px 0;
+            border-bottom: 1px solid #f1f5f9;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .site-title {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Arial Black', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1a102f;
+            letter-spacing: 0.05em;
+            margin: 0;
+            text-transform: capitalize;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .page-title {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            letter-spacing: 0.02em;
+        }
+
+        .page-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .action-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #ffffff;
+            background: linear-gradient(135deg, #e60067 0%, #ff6b8b 100%);
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(230, 0, 103, 0.35);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(230, 0, 103, 0.45);
+        }
+
+        .action-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 12px rgba(230, 0, 103, 0.3);
+        }
+
+        .action-button:disabled {
+            background: #cbd5e1;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* 結果表示エリア */
+        .result-container {
+            display: none;
+            margin-top: 36px;
+            padding: 24px 20px;
+            border-radius: 20px;
+            background: #f8fafc;
+            border: 1px solid #f1f5f9;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card-display-1 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        /* 画像枠 */
+        .image-box-single {
+            width: 180px;
+            background-color: #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .image-box-single img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-name {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #475569;
+            margin-bottom: 16px;
+        }
+
+        .result-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+            border-left: 3px solid #e60067;
+            padding-left: 12px;
+        }
+
+        .result-text {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+
+        /* ナビゲーションメニュー */
+        .menu-section {
+            margin-top: 40px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 28px;
+        }
+
+        .menu-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #64748b;
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: 0.05em;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 8px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #334155;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+
+        .menu-item:active {
+            transform: scale(0.98);
+        }
+
+        /* フッタースタイル */
+        .site-footer {
+            margin-top: 40px;
+            padding: 24px 0;
+            border-top: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
+        .about-section {
+            margin-bottom: 20px;
+            text-align: left;
+            background-color: #f8fafc;
+            padding: 16px 20px;
+            border-radius: 12px;
+        }
+
+        .about-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #475569;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .about-text {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+
+        /* スマホ用レスポンシブ微調整 */
+        @media (max-width: 480px) {
+            body {
+                padding: 0;
+            }
+            .container {
+                border-radius: 0;
+                min-height: 100vh;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ヘッダーエリア -->
+        <header class="site-header">
+            <div class="site-title">dairy-tarot.com</div>
+        </header>
+
+        <div class="main-content">
+            <h1 class="page-title">無料占い　次に起こる出来事</h1>
+
+            <p class="page-description">
+                この次に起こる出来事を占います。<br>あなたの運命が分岐する前触れです。
+            </p>
+
+            <!-- ボタンを押すとページをリロードしてカードを引く -->
+            <button class="action-button" id="draw-button">カードを引く</button>
+
+            <div class="result-container" id="result-area">
+                <div class="card-display-1">
+                    <div class="image-box-single"><img id="card-img-0" src="" alt="カード画像"></div>
+                </div>
+                <div class="card-name" id="card-name"></div>
+
+                <div class="result-title" id="result-title">次に起こる出来事</div>
+                <div class="result-text" id="result-text"></div>
+            </div>
+                <div class="result-text" id="result-text"></div>
+                <p class="page-description" style="margin-bottom: 0;">
+                    結果に納得いかないとき、連続で占ってみましょう。<br>最多で出現したカードの結果が現時点での有力な未来です。
+                </p>
+            </div>
+            <div class="menu-section">
+                <div class="menu-title">その他無料占い</div>
+                <div class="menu-grid">
+                    <a href="index.html" class="menu-item">YES/NOイエスノー占い</a>
+                    <a href="002.html" class="menu-item">ペットを亡くした方へ</a>
+                    <a href="003.html" class="menu-item">試験勉強。合格に近づいてる？</a>
+                    <a href="004.html" class="menu-item">今の運勢の流れ</a>
+                    <a href="005.html" class="menu-item">10年後のあなた</a>
+                    <a href="006.html" class="menu-item">復縁の可能性<br>（準備中）</a>
+                    <a href="007.html" class="menu-item">次に起こる出来事</a>
+                    <a href="008.html" class="menu-item">準備中</a>
+                    <a href="009.html" class="menu-item">準備中</a>
+                    <a href="010.html" class="menu-item">準備中</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- フッターエリア -->
+        <footer class="site-footer">
+            <div class="about-section">
+                <h2 class="about-title">このサイトについて</h2>
+                <p class="about-text">
+                    東京都在住の占い師（ウェブディレクター兼業）が練習用に作成しているサイトです。あなたの情報はサイトに読み込まれません。日常のよしなしごとやちょっとした不安の解消にお役立てください。
+                </p>
+            </div>
+            <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> dairy-tarot.com All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // =========================================================
+        // microCMSの設定情報
+        // =========================================================
+        const MICROCMS_SERVICE_DOMAIN = 'ureski6be2';
+        const MICROCMS_API_KEY = 'Z2D397HxOpaGqtgnMja65eKTt46vRLVfZvL4';
+        const ENDPOINT = 'next'; 
+
+        const drawButton = document.getElementById('draw-button');
+        const resultArea = document.getElementById('result-area');
+        const resultTitle = document.getElementById('result-title');
+        const resultText = document.getElementById('result-text');
+        const cardImg = document.getElementById('card-img-0');
+        const cardNameEl = document.getElementById('card-name');
+
+        // ボタンが押されたらリロード（パラメータ付与）する処理
+        drawButton.addEventListener('click', function() {
+            const currentUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            window.location.href = currentUrl + '?draw=true&t=' + new Date().getTime();
+        });
+
+        // ページ読み込み完了時の判定処理
+        window.addEventListener('DOMContentLoaded', async function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (!urlParams.has('draw')) {
+                return;
+            }
+
+            drawButton.textContent = 'もう一度占う';
+
+            try {
+                // 44パターン全て取得できるように limit=100 を設定
+                const url = `https://${MICROCMS_SERVICE_DOMAIN}.microcms.io/api/v1/${ENDPOINT}?limit=100`;
+
+                const response = await fetch(url, {
+                    headers: {
+                        'X-MICROCMS-API-KEY': MICROCMS_API_KEY
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`APIエラー: ${response.status} ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                const allCards = data.contents;
+
+                if (!allCards || allCards.length === 0) {
+                    alert('microCMSにカードデータが登録されていません。');
+                    return;
+                }
+
+                // 全44パターンのデータからランダムで1枚選出
+                const randomIndex = Math.floor(Math.random() * allCards.length);
+                const selectedCard = allCards[randomIndex];
+
+                // 画像の反映 (APIフィールド: img)
+                if (selectedCard.img && selectedCard.img.url) {
+                    cardImg.src = selectedCard.img.url;
+                    cardImg.alt = selectedCard.name || 'タロットカード';
+                } else if (typeof selectedCard.img === 'string') {
+                    cardImg.src = selectedCard.img;
+                    cardImg.alt = selectedCard.name || 'タロットカード';
+                } else {
+                    cardImg.src = '';
+                    cardImg.alt = '画像なし';
+                }
+
+                // カード名称の反映 (APIフィールド: name)
+                if (selectedCard.name) {
+                    cardNameEl.textContent = selectedCard.name;
+                    cardNameEl.style.display = 'block';
+                } else {
+                    cardNameEl.style.display = 'none';
+                }
+
+                // 見出し設定
+                resultTitle.textContent = '今の運勢';
+                
+                // 本文テキストの反映 (APIフィールド: text)
+                const mainContentText = selectedCard.text || 'カードからのメッセージを取得できませんでした。';
+                
+                // <br> タグを正しく改行として表示するために innerHTML でセット
+                resultText.innerHTML = mainContentText;
+
+                resultArea.style.display = 'block';
+                resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            } catch (error) {
+                console.error('エラー詳細:', error);
+                alert(`通信または処理中にエラーが発生しました:\n${error.message}`);
+            }
+        });
+
+        resultArea.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
