@@ -34,4 +34,10 @@
        <changefreq>daily</changefreq>
        <priority>1.0000</priority>
   </url>
+  <url>
+       <loc>https://dairy-tarot.com/007.html</loc>
+       <lastmod>2026-08-06T16:48:50+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
+  </url>
 </urlset>
